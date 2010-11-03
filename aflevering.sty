@@ -1,0 +1,18 @@
+\ProvidesPackage{aflevering}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[leftbars]{changebar}
+
+\newcounter{opg}
+
+\newcommand{\titel}[2]{ \begin{center} {\large \textbf{#1}} \\ \textit{#2} \\[4em] \end{center} }
+
+\newcommand{\delopg}[2]{\par \bigskip \noindent \reversemarginpar%
+	\marginpar[\flushright{\textbf{#1}}] \emph{} \emph{#2} \par}
+
+\newenvironment{opg}[1]{\textit{\textbf{#1\\}} \noindent \addtocounter{opg}{1} } { \indent }
+
+\newenvironment{besvarelse}%
+{\par \bigskip \addtolength{\leftskip}{\parindent} \cbstart}%
+{\par \addtolength{\leftskip}{-1\parindent} \cbend}
